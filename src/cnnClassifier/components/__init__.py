@@ -24,8 +24,8 @@ class DataIngestion:
                     logger.info(f"{filename} download! with following info: \n {headers}")
                 else:
                     logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")
-            except Exception:
-                logger.info("Delay for next attempt")
+            except Exception as e:
+                logger.info(f"Delay for next attempt {e}")
                 time.sleep(delay)
                 delay *= 2
         else:
