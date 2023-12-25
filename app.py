@@ -13,7 +13,7 @@ CORS(app)
 
 class ClientApp:
     def __init__(self):
-        self.filename = "inputImage.jpg"
+        self.filename = "inputImage.jpg" 
         self.classifier = PredictionPipeline(self.filename)
 
 @app.route("/", methods=['GET'])
